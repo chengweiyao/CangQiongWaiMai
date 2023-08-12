@@ -87,7 +87,8 @@ public class EmployeeController {
 
     @GetMapping("/page")
     @ApiOperation(value = "员工分页查询")
-    public Result<PageResult> page(EmployeePageQueryDTO employeePageQueryDTO){ //前端传过来的数据是Query模式的,不需要@RequestBody接受
+    public Result<PageResult> page(EmployeePageQueryDTO employeePageQueryDTO){
+        //前端传过来的数据是Query模式的,不需要@RequestBody接受
         log.info("员工分页查询:{}",employeePageQueryDTO);
         PageResult  pageResult = employeeService.pageQuery(employeePageQueryDTO);
         return Result.success(pageResult);
